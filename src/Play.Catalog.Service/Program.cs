@@ -1,7 +1,10 @@
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services
-builder.Services.AddControllers();
+builder.Services.AddControllers(options =>
+                                {
+                                    options.SuppressAsyncSuffixInActionNames = false;
+                                });
 
 // Needed by Swashbuckle to discover endpoints
 builder.Services.AddEndpointsApiExplorer();

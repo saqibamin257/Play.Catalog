@@ -1,0 +1,39 @@
+## Ignore Visual Studio temporary files, build results, and user-specific files
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build directories
+**/bin/
+**/obj/
+
+# Visual Studio Code
+.vscode/
+
+# Rider
+.idea/
+
+# NuGet
+#packages/
+*.nupkg
+
+# Dotnet publish
+publish/
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Rider/Resharper
+_ReSharper*/
+
+# Debug and runtime files
+*.log
+*.cache
+*.pdb
+*.dll
+*.exe
+*.runtimeconfig.json
+*.deps.json

@@ -122,7 +122,7 @@ namespace Play.Catalog.Service.Controllers
                 CreatedDate = DateTimeOffset.UtcNow
             };
             await itemsRepository.CreateAsync(item);
-            return CreatedAtAction(nameof(GetByIdAsync), new { id = item.Id }, item);
+            return CreatedAtAction(nameof(GetByIdAsync), new { id = item.Id }, item.AsDto());
         }
         //PUT
         [HttpPut("{id}")]
@@ -149,7 +149,7 @@ namespace Play.Catalog.Service.Controllers
             var existingItem = await itemsRepository.GetAsync(id);
             if (existingItem is null)
             {
-                NotFound();
+                return NotFound();
             }
             await itemsRepository.RemoveAsync(existingItem.Id);
             return NoContent();

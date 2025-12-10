@@ -1,4 +1,7 @@
 using Play.Catalog.Service.Entities;
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization;
+using MongoDB.Bson.Serialization.Serializers;
 using MongoDB.Driver;
 namespace Play.Catalog.Service.Repositories
 {
@@ -10,7 +13,8 @@ namespace Play.Catalog.Service.Repositories
 
         public ItemsRepository()
         {
-            var mongoClient = new MongoClient("mongodb://localhost:27017"); // MongoDB connection string
+            var settings = MongoClientSettings.FromConnectionString("mongodb://localhost:27017");
+            var mongoClient = new MongoClient(settings); // MongoDB connection with settings
             var database = mongoClient.GetDatabase("catalog"); // MongoDB database name = sql database name
             dbCollection = database.GetCollection<Item>(collectionName); // get collection from database
         }

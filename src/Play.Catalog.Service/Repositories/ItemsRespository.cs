@@ -5,17 +5,20 @@ using MongoDB.Bson.Serialization.Serializers;
 using MongoDB.Driver;
 namespace Play.Catalog.Service.Repositories
 {
-    public class ItemsRepository
+
+    public class ItemsRepository : IItemsRepository
     {
+
         private const string collectionName = "items"; // MongoDB collection name = sql table name
         private readonly IMongoCollection<Item> dbCollection;
         private readonly FilterDefinitionBuilder<Item> filterBuilder = Builders<Item>.Filter;
 
-        public ItemsRepository()
+        public ItemsRepository(IMongoDatabase database)
         {
-            var settings = MongoClientSettings.FromConnectionString("mongodb://localhost:27017");
-            var mongoClient = new MongoClient(settings); // MongoDB connection with settings
-            var database = mongoClient.GetDatabase("catalog"); // MongoDB database name = sql database name
+            // var settings = MongoClientSettings.FromConnectionString("mongodb://localhost:27017");
+            // var mongoClient = new MongoClient(settings); // MongoDB connection with settings
+            // var database = mongoClient.GetDatabase("catalog"); // MongoDB database name = sql database name
+
             dbCollection = database.GetCollection<Item>(collectionName); // get collection from database
         }
 

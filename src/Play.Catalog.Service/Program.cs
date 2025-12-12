@@ -1,35 +1,13 @@
-using System.Runtime.CompilerServices;
-using MongoDB.Bson.Serialization;
-using MongoDB.Bson.Serialization.Serializers;
-using MongoDB.Driver;
+
 using Play.Catalog.Service.Entities;
-using Play.Catalog.Service.Repositories;
-using Play.Catalog.Service.Settings;
-
-
+using Play.Common.MongoDB;
+using Play.Common.Settings;
 
 var builder = WebApplication.CreateBuilder(args);
-
-
-// Register MongoDB GUID serializer (only once at startup)
-// MongoDB.Bson.Serialization.BsonSerializer.RegisterSerializer(typeof(Guid), new MongoDB.Bson.Serialization.Serializers.GuidSerializer(MongoDB.Bson.GuidRepresentation.Standard));
-// BsonSerializer.RegisterSerializer(new DateTimeOffsetSerializer(MongoDB.Bson.BsonType.String));
-
 // Add services
 ServiceSettings serviceSettings = builder.Configuration.GetSection(nameof(ServiceSettings)).Get<ServiceSettings>();
-builder.Services.AddMongo().AddMongoRepository<Item>("items");
-// builder.Services.AddSingleton(serviceProvider =>
-// {
-//     var mongoDbSettings = builder.Configuration.GetSection(nameof(MongoDbSettings)).Get<MongoDbSettings>();
-//     var mongoClient = new MongoClient(mongoDbSettings.Connectiontring);
-//     return mongoClient.GetDatabase(serviceSettings.ServiceName);
-// });
-
-// builder.Services.AddSingleton<IRepository<Item>>(serviceProvier =>
-// {
-//   var database = serviceProvier.GetService<IMongoDatabase>();
-//   return new MongoRepository<Item>(database,"items");
-// });
+//builder.Services.AddMongo().AddMongoRepository<Item>("items");
+Play.Common.MongoDB.Extensions.AddMongo(builder.Services).AddMongoRepository<Item>("items");
 
 builder.Services.AddControllers(options =>
                                 {

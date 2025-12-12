@@ -94,6 +94,18 @@
           }
         }
       },
+      "Play.Common/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "MongoDB.Driver": "3.5.2"
+        },
+        "compile": {
+          "lib/net10.0/Play.Common.dll": {}
+        },
+        "runtime": {
+          "lib/net10.0/Play.Common.dll": {}
+        }
+      },
       "SharpCompress/0.30.1": {
         "type": "package",
         "compile": {
@@ -552,6 +564,17 @@
         "packageIcon.png"
       ]
     },
+    "Play.Common/1.0.0": {
+      "sha512": "wSD4m9xvOhl3wSgA96gKOD4fi/HK6veqtaDr6Iho1hQzDTwJiRcpfhRaC3r4MGRuJ9jENYzJgwMjonld3nkNtQ==",
+      "type": "package",
+      "path": "play.common/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        "lib/net10.0/Play.Common.dll",
+        "play.common.1.0.0.nupkg.sha512",
+        "play.common.nuspec"
+      ]
+    },
     "SharpCompress/0.30.1": {
       "sha512": "XqD4TpfyYGa7QTPzaGlMVbcecKnXy4YmYLDWrU+JIj7IuRNl7DH2END+Ll7ekWIY8o3dAMWLFDE1xdhfIWD1nw==",
       "type": "package",
@@ -687,7 +710,7 @@
   "projectFileDependencyGroups": {
     "net10.0": [
       "Microsoft.AspNetCore.OpenApi >= 10.0.0",
-      "MongoDB.Driver >= 3.5.2",
+      "Play.Common >= 1.0.0",
       "Swashbuckle.AspNetCore >= 10.0.1"
     ]
   },
@@ -718,6 +741,7 @@
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "C:\\Program Files\\dotnet\\library-packs": {},
+        "C:\\Projects-Study\\Projects\\packages": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -746,9 +770,9 @@
             "target": "Package",
             "version": "[10.0.0, )"
           },
-          "MongoDB.Driver": {
+          "Play.Common": {
             "target": "Package",
-            "version": "[3.5.2, )"
+            "version": "[1.0.0, )"
           },
           "Swashbuckle.AspNetCore": {
             "target": "Package",

@@ -1,9 +1,9 @@
-using System.ComponentModel.DataAnnotations;
+using System;
+using Play.Common;
 
 namespace Play.Catalog.Service.Entities
 {
-
-    public class Item : IEntity
+    public class Item : Play.Common.IEntity
     {
         public Guid Id { get; set; }
         public string? Name { get; set; }

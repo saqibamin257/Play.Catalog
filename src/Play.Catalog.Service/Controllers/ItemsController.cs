@@ -1,7 +1,10 @@
+using MassTransit;
 using Microsoft.AspNetCore.Mvc;
+using Play.Catalog.Contracts;
 using Play.Catalog.Service.Dtos;
 using Play.Catalog.Service.Entities;
 using Play.Common;
+
 
 
 namespace Play.Catalog.Service.Controllers
@@ -12,20 +15,22 @@ namespace Play.Catalog.Service.Controllers
     public class ItemsController : ControllerBase
     {
         private readonly Play.Common.IRepository<Item> itemsRepository;
+        private readonly IPublishEndpoint publishEndpoint;
 
-        public ItemsController(Play.Common.IRepository<Item> itemsRepository)
+
+        public ItemsController(Play.Common.IRepository<Item> itemsRepository, IPublishEndpoint publishEndpoint)
         {
             this.itemsRepository = itemsRepository;
-
+            this.publishEndpoint = publishEndpoint;
         }
 
         //Get
         [HttpGet]
-        public async Task<IEnumerable<ItemDto>> GetAsync()
+        public async Task<ActionResult<IEnumerable<ItemDto>>> GetAsync()
         {
             var items = (await itemsRepository.GetAllAsync())
                       .Select(item => item.AsDto());
-            return items;
+            return Ok(items);
         }
         //Get by Id
         [HttpGet("{id}")]
@@ -51,6 +56,9 @@ namespace Play.Catalog.Service.Controllers
                 CreatedDate = DateTimeOffset.UtcNow
             };
             await itemsRepository.CreateAsync(item);
+            //publish a message to message broker after create operation
+            await publishEndpoint.Publish(new CatalogItemCreated(item.Id, item.Name, item.Description));
+
             return CreatedAtAction(nameof(GetByIdAsync), new { id = item.Id }, item.AsDto());
         }
         //PUT
@@ -68,6 +76,9 @@ namespace Play.Catalog.Service.Controllers
             exsitingItem.Price = updateItemDto.Price;
 
             await itemsRepository.UpdateAsync(exsitingItem);
+            //publish a message to message broker after create operation
+            await publishEndpoint.Publish(new CatalogItemUpdated(exsitingItem.Id, exsitingItem.Name, exsitingItem.Description));
+
             return NoContent();
         }
         //Delete
@@ -81,6 +92,8 @@ namespace Play.Catalog.Service.Controllers
                 return NotFound();
             }
             await itemsRepository.RemoveAsync(existingItem.Id);
+            //publish a message to message broker after delete operation
+            await publishEndpoint.Publish(new CatalogItemDeleted(id));
             return NoContent();
         }
 

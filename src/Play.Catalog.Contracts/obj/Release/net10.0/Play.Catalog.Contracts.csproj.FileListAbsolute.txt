@@ -1,0 +1,12 @@
+C:\Projects-Study\Projects\Play.Catalog\src\play.catalog.contracts\bin\Release\net10.0\Play.Catalog.Contracts.deps.json
+C:\Projects-Study\Projects\Play.Catalog\src\play.catalog.contracts\bin\Release\net10.0\Play.Catalog.Contracts.dll
+C:\Projects-Study\Projects\Play.Catalog\src\play.catalog.contracts\bin\Release\net10.0\Play.Catalog.Contracts.pdb
+C:\Projects-Study\Projects\Play.Catalog\src\play.catalog.contracts\obj\Release\net10.0\Play.Catalog.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects-Study\Projects\Play.Catalog\src\play.catalog.contracts\obj\Release\net10.0\Play.Catalog.Contracts.AssemblyInfoInputs.cache
+C:\Projects-Study\Projects\Play.Catalog\src\play.catalog.contracts\obj\Release\net10.0\Play.Catalog.Contracts.AssemblyInfo.cs
+C:\Projects-Study\Projects\Play.Catalog\src\play.catalog.contracts\obj\Release\net10.0\Play.Catalog.Contracts.csproj.CoreCompileInputs.cache
+C:\Projects-Study\Projects\Play.Catalog\src\play.catalog.contracts\obj\Release\net10.0\Play.Catalog.Contracts.sourcelink.json
+C:\Projects-Study\Projects\Play.Catalog\src\play.catalog.contracts\obj\Release\net10.0\Play.Catalog.Contracts.dll
+C:\Projects-Study\Projects\Play.Catalog\src\play.catalog.contracts\obj\Release\net10.0\refint\Play.Catalog.Contracts.dll
+C:\Projects-Study\Projects\Play.Catalog\src\play.catalog.contracts\obj\Release\net10.0\Play.Catalog.Contracts.pdb
+C:\Projects-Study\Projects\Play.Catalog\src\play.catalog.contracts\obj\Release\net10.0\ref\Play.Catalog.Contracts.dll

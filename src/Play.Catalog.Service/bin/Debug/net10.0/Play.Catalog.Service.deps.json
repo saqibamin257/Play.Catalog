@@ -8,11 +8,9 @@
     ".NETCoreApp,Version=v10.0": {
       "Play.Catalog.Service/1.0.0": {
         "dependencies": {
-          "MassTransit.AspNetCore": "7.3.1",
-          "MassTransit.RabbitMQ": "8.5.7",
           "Microsoft.AspNetCore.OpenApi": "10.0.0",
           "Play.Catalog.Contracts": "1.0.0",
-          "Play.Common": "1.0.0",
+          "Play.Common": "1.0.1",
           "Swashbuckle.AspNetCore": "10.0.1"
         },
         "runtime": {
@@ -43,29 +41,6 @@
           "lib/net10.0/MassTransit.Abstractions.dll": {
             "assemblyVersion": "8.5.7.0",
             "fileVersion": "8.5.7.0"
-          }
-        }
-      },
-      "MassTransit.AspNetCore/7.3.1": {
-        "dependencies": {
-          "MassTransit": "8.5.7",
-          "MassTransit.Extensions.DependencyInjection": "7.3.1"
-        },
-        "runtime": {
-          "lib/netstandard2.0/MassTransit.AspNetCoreIntegration.dll": {
-            "assemblyVersion": "7.3.1.0",
-            "fileVersion": "7.3.1.0"
-          }
-        }
-      },
-      "MassTransit.Extensions.DependencyInjection/7.3.1": {
-        "dependencies": {
-          "MassTransit": "8.5.7"
-        },
-        "runtime": {
-          "lib/netstandard2.0/MassTransit.ExtensionsDependencyInjectionIntegration.dll": {
-            "assemblyVersion": "7.3.1.0",
-            "fileVersion": "7.3.1.0"
           }
         }
       },
@@ -123,8 +98,10 @@
           }
         }
       },
-      "Play.Common/1.0.0": {
+      "Play.Common/1.0.1": {
         "dependencies": {
+          "MassTransit": "8.5.7",
+          "MassTransit.RabbitMQ": "8.5.7",
           "MongoDB.Driver": "3.5.2"
         },
         "runtime": {
@@ -240,20 +217,6 @@
       "path": "masstransit.abstractions/8.5.7",
       "hashPath": "masstransit.abstractions.8.5.7.nupkg.sha512"
     },
-    "MassTransit.AspNetCore/7.3.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-l5zu6mHevPQGP1tfDg4My8dtqH4n2jL22+Y1+GnAs12liQy5gYLcJAwSmCKb1iusjjD9S1tgfdILVkAfShfN8w==",
-      "path": "masstransit.aspnetcore/7.3.1",
-      "hashPath": "masstransit.aspnetcore.7.3.1.nupkg.sha512"
-    },
-    "MassTransit.Extensions.DependencyInjection/7.3.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-s1gnkYUngHNP9m2+Jx1vuUAvoVm4KB3oVbtFJUlXNtBBzhRFq1N3Y0w5iiew60ZBLm0j0RQcSRbI0ahMOkL+og==",
-      "path": "masstransit.extensions.dependencyinjection/7.3.1",
-      "hashPath": "masstransit.extensions.dependencyinjection.7.3.1.nupkg.sha512"
-    },
     "MassTransit.RabbitMQ/8.5.7": {
       "type": "package",
       "serviceable": true,
@@ -289,12 +252,12 @@
       "path": "mongodb.driver/3.5.2",
       "hashPath": "mongodb.driver.3.5.2.nupkg.sha512"
     },
-    "Play.Common/1.0.0": {
+    "Play.Common/1.0.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-wSD4m9xvOhl3wSgA96gKOD4fi/HK6veqtaDr6Iho1hQzDTwJiRcpfhRaC3r4MGRuJ9jENYzJgwMjonld3nkNtQ==",
-      "path": "play.common/1.0.0",
-      "hashPath": "play.common.1.0.0.nupkg.sha512"
+      "sha512": "sha512-6OflvumrqIRumHMKCAB7YgxxeykU436W1lT/y67iZ1dU9YKUIzLbsGzIJYG9ynvRuqjTfXBQwaozcyu734wggg==",
+      "path": "play.common/1.0.1",
+      "hashPath": "play.common.1.0.1.nupkg.sha512"
     },
     "RabbitMQ.Client/7.2.0": {
       "type": "package",

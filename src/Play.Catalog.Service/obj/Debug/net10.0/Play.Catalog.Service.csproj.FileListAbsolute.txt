@@ -9,8 +9,6 @@ C:\Projects-Study\Projects\Play.Catalog\src\Play.Catalog.Service\bin\Debug\net10
 C:\Projects-Study\Projects\Play.Catalog\src\Play.Catalog.Service\bin\Debug\net10.0\DnsClient.dll
 C:\Projects-Study\Projects\Play.Catalog\src\Play.Catalog.Service\bin\Debug\net10.0\MassTransit.dll
 C:\Projects-Study\Projects\Play.Catalog\src\Play.Catalog.Service\bin\Debug\net10.0\MassTransit.Abstractions.dll
-C:\Projects-Study\Projects\Play.Catalog\src\Play.Catalog.Service\bin\Debug\net10.0\MassTransit.AspNetCoreIntegration.dll
-C:\Projects-Study\Projects\Play.Catalog\src\Play.Catalog.Service\bin\Debug\net10.0\MassTransit.ExtensionsDependencyInjectionIntegration.dll
 C:\Projects-Study\Projects\Play.Catalog\src\Play.Catalog.Service\bin\Debug\net10.0\MassTransit.RabbitMqTransport.dll
 C:\Projects-Study\Projects\Play.Catalog\src\Play.Catalog.Service\bin\Debug\net10.0\Microsoft.AspNetCore.OpenApi.dll
 C:\Projects-Study\Projects\Play.Catalog\src\Play.Catalog.Service\bin\Debug\net10.0\Microsoft.OpenApi.dll

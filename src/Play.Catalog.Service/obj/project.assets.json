@@ -44,39 +44,6 @@
           }
         }
       },
-      "MassTransit.AspNetCore/7.3.1": {
-        "type": "package",
-        "dependencies": {
-          "MassTransit": "7.3.1",
-          "MassTransit.Extensions.DependencyInjection": "7.3.1"
-        },
-        "compile": {
-          "lib/netstandard2.0/MassTransit.AspNetCoreIntegration.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/MassTransit.AspNetCoreIntegration.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "MassTransit.Extensions.DependencyInjection/7.3.1": {
-        "type": "package",
-        "dependencies": {
-          "MassTransit": "7.3.1"
-        },
-        "compile": {
-          "lib/netstandard2.0/MassTransit.ExtensionsDependencyInjectionIntegration.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/MassTransit.ExtensionsDependencyInjectionIntegration.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "MassTransit.RabbitMQ/8.5.7": {
         "type": "package",
         "dependencies": {
@@ -173,9 +140,11 @@
           }
         }
       },
-      "Play.Common/1.0.0": {
+      "Play.Common/1.0.1": {
         "type": "package",
         "dependencies": {
+          "MassTransit": "8.5.7",
+          "MassTransit.RabbitMQ": "8.5.7",
           "MongoDB.Driver": "3.5.2"
         },
         "compile": {
@@ -375,34 +344,6 @@
         "lib/netstandard2.0/MassTransit.Abstractions.xml",
         "masstransit.abstractions.8.5.7.nupkg.sha512",
         "masstransit.abstractions.nuspec",
-        "mt-logo-small.png"
-      ]
-    },
-    "MassTransit.AspNetCore/7.3.1": {
-      "sha512": "l5zu6mHevPQGP1tfDg4My8dtqH4n2jL22+Y1+GnAs12liQy5gYLcJAwSmCKb1iusjjD9S1tgfdILVkAfShfN8w==",
-      "type": "package",
-      "path": "masstransit.aspnetcore/7.3.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/netstandard2.0/MassTransit.AspNetCoreIntegration.dll",
-        "lib/netstandard2.0/MassTransit.AspNetCoreIntegration.xml",
-        "masstransit.aspnetcore.7.3.1.nupkg.sha512",
-        "masstransit.aspnetcore.nuspec",
-        "mt-logo-small.png"
-      ]
-    },
-    "MassTransit.Extensions.DependencyInjection/7.3.1": {
-      "sha512": "s1gnkYUngHNP9m2+Jx1vuUAvoVm4KB3oVbtFJUlXNtBBzhRFq1N3Y0w5iiew60ZBLm0j0RQcSRbI0ahMOkL+og==",
-      "type": "package",
-      "path": "masstransit.extensions.dependencyinjection/7.3.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/netstandard2.0/MassTransit.ExtensionsDependencyInjectionIntegration.dll",
-        "lib/netstandard2.0/MassTransit.ExtensionsDependencyInjectionIntegration.xml",
-        "masstransit.extensions.dependencyinjection.7.3.1.nupkg.sha512",
-        "masstransit.extensions.dependencyinjection.nuspec",
         "mt-logo-small.png"
       ]
     },
@@ -763,14 +704,14 @@
         "packageIcon.png"
       ]
     },
-    "Play.Common/1.0.0": {
-      "sha512": "wSD4m9xvOhl3wSgA96gKOD4fi/HK6veqtaDr6Iho1hQzDTwJiRcpfhRaC3r4MGRuJ9jENYzJgwMjonld3nkNtQ==",
+    "Play.Common/1.0.1": {
+      "sha512": "6OflvumrqIRumHMKCAB7YgxxeykU436W1lT/y67iZ1dU9YKUIzLbsGzIJYG9ynvRuqjTfXBQwaozcyu734wggg==",
       "type": "package",
-      "path": "play.common/1.0.0",
+      "path": "play.common/1.0.1",
       "files": [
         ".nupkg.metadata",
         "lib/net10.0/Play.Common.dll",
-        "play.common.1.0.0.nupkg.sha512",
+        "play.common.1.0.1.nupkg.sha512",
         "play.common.nuspec"
       ]
     },
@@ -930,11 +871,9 @@
   },
   "projectFileDependencyGroups": {
     "net10.0": [
-      "MassTransit.AspNetCore >= 7.3.1",
-      "MassTransit.RabbitMQ >= 8.5.7",
       "Microsoft.AspNetCore.OpenApi >= 10.0.0",
       "Play.Catalog.Contracts >= 1.0.0",
-      "Play.Common >= 1.0.0",
+      "Play.Common >= 1.0.1",
       "Swashbuckle.AspNetCore >= 10.0.1"
     ]
   },
@@ -994,21 +933,13 @@
       "net10.0": {
         "targetAlias": "net10.0",
         "dependencies": {
-          "MassTransit.AspNetCore": {
-            "target": "Package",
-            "version": "[7.3.1, )"
-          },
-          "MassTransit.RabbitMQ": {
-            "target": "Package",
-            "version": "[8.5.7, )"
-          },
           "Microsoft.AspNetCore.OpenApi": {
             "target": "Package",
             "version": "[10.0.0, )"
           },
           "Play.Common": {
             "target": "Package",
-            "version": "[1.0.0, )"
+            "version": "[1.0.1, )"
           },
           "Swashbuckle.AspNetCore": {
             "target": "Package",

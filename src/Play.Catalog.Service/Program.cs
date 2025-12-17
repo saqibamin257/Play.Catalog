@@ -1,29 +1,28 @@
 using Play.Common.Settings;
 using MassTransit;
 using Play.Catalog.Service.Entities;
-using Play.Catalog.Service.Settings;
 using Play.Common.MongoDB;
+using Play.Common.MassTransit;
 
 
 var builder = WebApplication.CreateBuilder(args);
 // Add services
 Play.Common.Settings.ServiceSettings serviceSettings = builder.Configuration.GetSection(nameof(Play.Common.Settings.ServiceSettings)).Get<Play.Common.Settings.ServiceSettings>();
 //builder.Services.AddMongo().AddMongoRepository<Item>("items");
-Play.Common.MongoDB.Extensions.AddMongo(builder.Services).AddMongoRepository<Item>("items");
+Play.Common.MongoDB.Extensions.AddMongo(builder.Services).AddMongoRepository<Item>("items")
+                              .AddMassTransitWithRabbitMq();
 
-builder.Services.AddMassTransit(x =>
-{
-  x.UsingRabbitMq((context, configurator) =>
-  {
-    var rabbitMQSettings = builder.Configuration.GetSection(nameof(RabbitMQSettings)).Get<RabbitMQSettings>();
-    configurator.Host(rabbitMQSettings.Host);
-    configurator.ConfigureEndpoints(context, new KebabCaseEndpointNameFormatter(serviceSettings.ServiceName, false));
+// builder.Services.AddMassTransit(x =>
+// {
+//   x.UsingRabbitMq((context, configurator) =>
+//   {
+//     var rabbitMQSettings = builder.Configuration.GetSection(nameof(RabbitMQSettings)).Get<RabbitMQSettings>();
+//     configurator.Host(rabbitMQSettings.Host);
+//     configurator.ConfigureEndpoints(context, new KebabCaseEndpointNameFormatter(serviceSettings.ServiceName, false));
+//   });
+// });
 
-  });
-});
-
-//builder.Services.AddMassTransitHostedService();
-
+// Above MassTransit Config code has been moved to Play.Common
 
 
 builder.Services.AddControllers(options =>
